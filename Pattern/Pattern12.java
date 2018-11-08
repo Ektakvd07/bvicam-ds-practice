@@ -15,7 +15,7 @@
 987654321
 
  */
-package pattern.Pattern;
+package pattern;
 
 public class Pattern12 {
     public static void main(String args[])
