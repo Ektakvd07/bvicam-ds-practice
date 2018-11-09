@@ -41,7 +41,7 @@ import java.util.Scanner;
 
 public class Queue {
     static Scanner obj=new Scanner(System.in);
-    static int front=0,rear=0;
+    int front=0,rear=0;
     void insert(int queue[],int n,int num)
     { if(rear==(n))
        System.out.println("Queue is full");
@@ -86,10 +86,11 @@ public class Queue {
         n=obj.nextInt();
         int[] queue=new int[n];
         System.out.println("enter the stack operation:\n1.insert\n2.delete\n3.display ");
+        Queue obj2=new Queue();
         do{
         System.out.println("enter your choice: ");
         choice=obj.nextInt();
-        Queue obj2=new Queue();
+        
         
         switch(choice)
         {
