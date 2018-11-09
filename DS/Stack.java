@@ -56,7 +56,7 @@ import java.util.Scanner;
 public class Stack {
     static Scanner obj=new Scanner(System.in);
     
-    static int top=-1;
+    int top=-1;
     
     void push(int stack[],int num,int n)
     {  if(top==(n-1))
@@ -110,10 +110,11 @@ public class Stack {
         n=obj.nextInt();
         int[] stack=new int[n];
         System.out.println("enter the stack operation:\n1.push\n2.pop\n3.peek\n4.display ");
+        Stack obj2=new Stack();
         do{
         System.out.println("enter your choice: ");
         choice=obj.nextInt();
-        Stack obj2=new Stack();
+        
         
         switch(choice)
         {
