@@ -1,17 +1,18 @@
 /*
  WAP to print pattern
-*       *
-**     **
-***   ***
-**** ****
-*********
-**** ****
-***   ***
-**     **
-*       *
+
+*               * 
+  *           *   
+*   *       *   * 
+  *   *   *   *   
+*   *   *   *   * 
+  *   *   *   *   
+*   *       *   * 
+  *           *   
+*               * 
 
  */
-package pattern;
+package pattern.Pattern;
 
 public class Pattern3
 {public static void main(String args[])
@@ -21,18 +22,33 @@ public class Pattern3
         {
             for(j=0;j<9;j++)
             { if(i==j)
-            {System.out.print("*");}
+            {System.out.print("* ");}
             else if(i>j)
             {if((i+j)<=8)
-                System.out.print("*");
+            {
+                if((i+j)%2==0)
+                {
+                System.out.print("* ");
+                }
+                else
+                    System.out.print("  "); 
+                    
+            }
             else
-                System.out.print(" "); 
+                System.out.print("  "); 
             }
             else if(j>i)
             {if((i+j)>=8)
-               System.out.print("*"); 
+            {
+                if((i+j)%2==0)
+                {
+                System.out.print("* ");
+                }
+                else
+                    System.out.print("  "); 
+            }
              else
-                System.out.print(" "); 
+                System.out.print("  "); 
             }
             
             }
