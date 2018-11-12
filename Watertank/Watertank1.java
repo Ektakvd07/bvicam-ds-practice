@@ -34,7 +34,7 @@ array is:
 0
 total water need: 2
  */
-package pattern.Watertank;
+package Watertank;
 import java.util.Scanner;
 public class Watertank1 {
     static Scanner obj=new Scanner(System.in);
