@@ -149,7 +149,7 @@ public class Stack {
             }
             case 4:
             {
-                obj2.display(stack);//value retuned by display() assign to r 
+                obj2.display(stack);//display() call 
                 break;
             }
             default:

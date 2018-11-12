@@ -34,37 +34,42 @@ do you want to again enter your choice? (1 for yes, 0 for no)
 0
 
  */
-package pattern;
+package queue;
 
 import java.util.Scanner;
 
 
 public class Queue {
     static Scanner obj=new Scanner(System.in);
-    int front=0,rear=0;
-    void insert(int queue[],int n,int num)
+    int front,rear;
+    void initialize()
+    {
+        front=0;//front initialize
+        rear=0;//rear initialize
+    }
+    int insert(int queue[],int n,int num)
     { if(rear==(n))
-       System.out.println("Queue is full");
+       return 0;
        else
-       {queue[rear++]= num;
-       System.out.println("Element inserted: ");
+       {queue[rear++]= num;//element inserted
+        return 1;
        }
     
         
     }
-    void delete(int queue[],int n)
-    {if(front==rear)
-        System.out.println("Queue is empty");
+    int delete(int queue[],int n)
+    {  if(front==rear)
+        return 0;
         else
-        {front++;
-        System.out.println("Element deleted: ");
+        {front++;//element deleted
+         return 1;
         }
         
     }
     void display(int queue[],int n)
     {if(front==rear)
      {
-      System.out.println("Queue is empty ");
+      System.out.println("Queue is empty ");//print when front=rear
      }
     
     else
@@ -73,7 +78,7 @@ public class Queue {
      System.out.println("Queue elements are: ");
         for(i=front;i<rear;i++)
         {
-            System.out.println(queue[i]);
+            System.out.println(queue[i]);//print queue element
         }
         
      }
@@ -83,36 +88,45 @@ public class Queue {
     {int n,choice,num,flag;
         flag=1;
         System.out.println("enter the size of queue: ");
-        n=obj.nextInt();
+        n=obj.nextInt();//input size of queue
         int[] queue=new int[n];
         System.out.println("enter the stack operation:\n1.insert\n2.delete\n3.display ");
         Queue obj2=new Queue();
+        obj2.initialize();//initialize() call
         do{
         System.out.println("enter your choice: ");
-        choice=obj.nextInt();
+        choice=obj.nextInt();//input user choice
         
         
         switch(choice)
         {
             case 1:
             { System.out.println("enter the value to be inserted: ");
-              num=obj.nextInt();
-                obj2.insert(queue,n,num);
+              num=obj.nextInt();//input value
+              int r = obj2.insert(queue,n,num);//value returned by insert() assign to r
+              if(r==0)
+                  System.out.println("Queue is full");
+              else
+                  System.out.println("Element inserted: ");
               break;  
             }
             case 2:
-            {   obj2.delete(queue,n);
+            {   int r = obj2.delete(queue,n);//value returned by delete() assign to r
+                if(r==0)
+                    System.out.println("Queue is empty");
+                else
+                    System.out.println("Element deleted: ");
                 break;  
             }
             
             case 3:
             {
-                obj2.display(queue,n);
+                obj2.display(queue,n);//display() call
                 break;
             }
             default:
             {
-               System.out.println("entered wrong choice");
+               System.out.println("entered wrong choice");//print on wrong choice entered by user
             }
         }System.out.println("do you want to again enter your choice? (1 for yes, 0 for no)");
          flag=obj.nextInt();
