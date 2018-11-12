@@ -55,35 +55,38 @@ import java.util.Scanner;
 
 public class Stack {
     static Scanner obj=new Scanner(System.in);
+    int top;
+    void initialize()
+    {
+    top=-1;
+    }
     
-    int top=-1;
-    
-    void push(int stack[],int num,int n)
+    int push(int stack[],int num,int n)
     {  if(top==(n-1))
-       System.out.println("Stack overflow");
+       return 0;
        else
        {stack[++top]= num;
-       System.out.println("Element pushed: ");
+       return 1;
        }
     
     }
-    void pop(int stack[])
+    int pop(int stack[])
     {   if(top<0)
-        System.out.println("Stack underflow");
+        return 0;
         else
         {top--;
-        System.out.println("Element popped: ");
+        return 1;
         }
      
             
     }
-    void peek(int stack[])
+    int peek(int stack[])
     {if(top<0)
     {
-         System.out.println("Stack underflow");
+         return 0;
     }
     else
-        System.out.println("Stack top: "+stack[top]);
+        return stack[top];
     
     }
     void display(int stack[])
@@ -111,25 +114,37 @@ public class Stack {
         int[] stack=new int[n];
         System.out.println("enter the stack operation:\n1.push\n2.pop\n3.peek\n4.display ");
         Stack obj2=new Stack();
+        obj2.initialize();
         do{
         System.out.println("enter your choice: ");
         choice=obj.nextInt();
-        
         
         switch(choice)
         {
             case 1:
             { System.out.println("enter the value to be pushed: ");
               num=obj.nextInt();
-                obj2.push(stack,num,n);
+              int r = obj2.push(stack,num,n);
+              if(r==0)
+                  System.out.println("Stack overflow");
+              else
+                  System.out.println("Element pushed: ");
               break;  
             }
             case 2:
-            {   obj2.pop(stack);
+            {   int r = obj2.pop(stack);
+            if(r==0)
+                System.out.println("Stack underflow");
+            else
+                System.out.println("Element popped: ");
                 break;  
             }
             case 3:
-            {   obj2.peek(stack);
+            {   int r = obj2.peek(stack);
+             if(r==0)
+                 System.out.println("Stack underflow");
+             else
+                 System.out.println("Stack top: "+r);
                 break;  
             }
             case 4:
