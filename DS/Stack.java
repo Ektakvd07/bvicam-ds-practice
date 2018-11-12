@@ -58,14 +58,14 @@ public class Stack {
     int top;
     void initialize()
     {
-    top=-1;
+    top=-1;//top initialize
     }
     
     int push(int stack[],int num,int n)
     {  if(top==(n-1))
        return 0;
        else
-       {stack[++top]= num;
+       {stack[++top]= num;//element pushed
        return 1;
        }
     
@@ -74,7 +74,7 @@ public class Stack {
     {   if(top<0)
         return 0;
         else
-        {top--;
+        {top--;//element popped
         return 1;
         }
      
@@ -86,13 +86,13 @@ public class Stack {
          return 0;
     }
     else
-        return stack[top];
+        return stack[top];//return top element
     
     }
     void display(int stack[])
     {if(top<0)
     {
-      System.out.println("stack empty ");
+      System.out.println("stack empty ");//print when top<0
     }
     else
     {
@@ -100,7 +100,7 @@ public class Stack {
      System.out.println("stack elements are: ");
         for(i=top;i>=0;i--)
         {
-            System.out.println(stack[i]);
+            System.out.println(stack[i]);//print stack element
         }
         
     }
@@ -110,21 +110,21 @@ public class Stack {
         int n,choice,num,flag;
         flag=1;
         System.out.println("enter the size of stack: ");
-        n=obj.nextInt();
+        n=obj.nextInt();//input size of stack
         int[] stack=new int[n];
         System.out.println("enter the stack operation:\n1.push\n2.pop\n3.peek\n4.display ");
         Stack obj2=new Stack();
-        obj2.initialize();
+        obj2.initialize();//initialize() call
         do{
         System.out.println("enter your choice: ");
-        choice=obj.nextInt();
+        choice=obj.nextInt();//input user choice
         
         switch(choice)
         {
             case 1:
             { System.out.println("enter the value to be pushed: ");
-              num=obj.nextInt();
-              int r = obj2.push(stack,num,n);
+              num=obj.nextInt();//input value
+              int r = obj2.push(stack,num,n);//value retuned by push() assign to r
               if(r==0)
                   System.out.println("Stack overflow");
               else
@@ -132,7 +132,7 @@ public class Stack {
               break;  
             }
             case 2:
-            {   int r = obj2.pop(stack);
+            {   int r = obj2.pop(stack);//value retuned by pop() assign to r
             if(r==0)
                 System.out.println("Stack underflow");
             else
@@ -140,7 +140,7 @@ public class Stack {
                 break;  
             }
             case 3:
-            {   int r = obj2.peek(stack);
+            {   int r = obj2.peek(stack);//value retuned by peek() assign to r
              if(r==0)
                  System.out.println("Stack underflow");
              else
@@ -149,12 +149,12 @@ public class Stack {
             }
             case 4:
             {
-                obj2.display(stack);
+                obj2.display(stack);//value retuned by display() assign to r 
                 break;
             }
             default:
             {
-               System.out.println("entered wrong choice");
+               System.out.println("entered wrong choice");//print on wrong choice entered by user
             }
         }System.out.println("do you want to again enter your choice? (1 for yes, 0 for no)");
          flag=obj.nextInt();
