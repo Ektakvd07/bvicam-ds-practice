@@ -11,7 +11,7 @@ O(n)
 TEST CASES
 enter the size of queue: 
 4
-enter the stack operation:
+enter the queue operation:
 1.insert
 2.delete
 3.display 
@@ -90,7 +90,7 @@ public class Queue {
         System.out.println("enter the size of queue: ");
         n=obj.nextInt();//input size of queue
         int[] queue=new int[n];
-        System.out.println("enter the stack operation:\n1.insert\n2.delete\n3.display ");
+        System.out.println("enter the queue operation:\n1.insert\n2.delete\n3.display ");
         Queue obj2=new Queue();
         obj2.initialize();//initialize() call
         do{
